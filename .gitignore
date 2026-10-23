@@ -1,0 +1,4 @@
+LidAwake.app/
+.build/
+*.zip
+.DS_Store
