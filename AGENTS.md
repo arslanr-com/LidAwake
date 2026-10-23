@@ -59,3 +59,15 @@ There are no automated tests. They'd need root and real hardware. Before you fin
 6. Quit from the menu while on: `SleepDisabled` returns to `0`.
 
 When you change behavior, update `README.md` too.
+
+## Releasing
+
+1. Bump `CFBundleShortVersionString` (and `CFBundleVersion`) in `build.sh`, commit and push.
+2. Build and zip with `ditto`, which keeps the code signature intact:
+   ```bash
+   ./build.sh
+   ditto -c -k --keepParent LidAwake.app LidAwake.zip
+   ```
+3. `gh release create vX.Y.Z LidAwake.zip --title "LidAwake X.Y.Z" --notes "…"`
+
+The asset must be named `LidAwake.zip`: the README links to `releases/latest/download/LidAwake.zip`.

@@ -17,9 +17,24 @@ If you came here looking for **Amphetamine**, **Caffeine**, **KeepingYouAwake**,
 - Menu bar only: no Dock icon, no windows, no telemetry, no network access, no dependencies.
 - Universal binary for Apple Silicon and Intel, macOS 13 Ventura or later.
 
-## Install
+## Download
 
-Build from source. You need the Xcode Command Line Tools (`xcode-select --install`).
+**[⬇ Download LidAwake.zip](https://github.com/arslanr-com/LidAwake/releases/latest/download/LidAwake.zip)** (latest release, universal: Apple Silicon and Intel, macOS 13+)
+
+1. Unzip it and move `LidAwake.app` to **Applications**.
+2. Open it. A moon icon appears in the menu bar.
+
+LidAwake is ad-hoc signed, not notarized by Apple, so the first launch is blocked with a warning. To allow it, open **System Settings → Privacy & Security**, scroll down and click **Open Anyway** next to LidAwake. Or remove the quarantine flag in Terminal:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/LidAwake.app
+```
+
+All releases are on the [Releases page](https://github.com/arslanr-com/LidAwake/releases).
+
+## Build from source
+
+You need the Xcode Command Line Tools (`xcode-select --install`).
 
 ```bash
 git clone https://github.com/arslanr-com/LidAwake.git
@@ -28,8 +43,6 @@ cd LidAwake
 mv LidAwake.app /Applications/
 open /Applications/LidAwake.app
 ```
-
-A moon icon appears in the menu bar. The app is ad-hoc signed, so if macOS blocks the first launch, right-click the app and choose **Open**.
 
 ## Usage
 
